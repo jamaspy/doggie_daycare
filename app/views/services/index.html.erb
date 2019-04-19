@@ -1,0 +1,11 @@
+<h1>Services List</h1>
+
+
+<% @services.each do |service| %>
+
+<p><span class = "bold-text">Name:</span> <span class = "index-to-show-link"><%= link_to service.name, service_path(service.id) %></span> </p>
+<p><span class = "bold-text">Price:</span> <%= service.price %></p>
+
+
+
+<% end %>

@@ -1,0 +1,6 @@
+<h1>List Of Vets</h1>
+<% @vets.each do |vet| %>
+<p><span class = "bold-text">Name:</span> <span class = "index-to-show-link"><%= link_to vet.name, vet_path(vet.id) %></span></p>
+<p><span class = "bold-text">Phone:</span> <%= vet.phone %></p>
+<p><span class = "bold-text">Address:</span> <%= vet.address %></p>
+<% end %>

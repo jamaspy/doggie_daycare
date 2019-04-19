@@ -1,0 +1,11 @@
+<h1>All Dogs</h1>
+<% @dogs.each do |dog| %>
+<%= image_tag dog.image, :class => "thumbnail"%>
+
+<p><span class = "bold-text">Name:</span> <span class = "index-to-show-link"><%= link_to dog.name, dog_path(dog.id) %></span> </p>
+<p><span class = "bold-text">Breed:</span> <%= dog.breed %></p>
+<p><span class = "bold-text">Color:</span> <%= dog.color %></p>
+<p><span class = "bold-text">Sex:</span> <%= dog.sex%></p>
+
+
+<% end %>

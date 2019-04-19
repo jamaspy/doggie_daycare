@@ -1,0 +1,9 @@
+<h1>List Of Vaccinations</h1>
+<% @vaccinations.each do |vaccination| %>
+
+<p><span class = "index-to-show-link"><%= link_to vaccination.name, vaccination_path(vaccination.id) %> </p>
+
+
+
+
+<% end %>

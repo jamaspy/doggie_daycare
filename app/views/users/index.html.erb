@@ -1,0 +1,6 @@
+<h1>List Of Users</h1>
+<% @users.each do |user| %>
+<p><span class = "bold-text">Name:</span> <span class = "index-to-show-link"><%= link_to user.name, user_path(user.id) %></span></p>
+<p><span class = "bold-text">Email:</span> <%= user.email %></p>
+<p><span class = "bold-text">Password:</span> <%= user.password_digest %></p>
+<% end %>
