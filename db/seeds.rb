@@ -4,6 +4,9 @@ Dog.create(:name =>"Cooper", :breed=>"Toy Poodle", :color => "Black", :sex => "m
 
 Dog.create(:name =>"Peggy", :breed=>"Cavoodle", :color => "Tan", :sex => "female", :image => "https://bowwowinsurance.com.au/wp-content/uploads/2018/10/cavoodle-700x700.jpg", :vac_1 => "2019-03-12", :vac_2 => "2019-02-12", :flea => "2019-03-12", :worm => "2019-03-12", :owner_id => "", :service_id => "", :vac_id => "")
 Dog.create(:name =>"Busta", :breed=>"King Charles Spaniel", :color => "Tan & White", :sex => "Female", :image => "https://bowwowinsurance.com.au/wp-content/uploads/2018/10/cavalier-king-charles-spaniel-700x700.jpg", :vac_1 => "2019-01-12", :vac_2 => "2019-01-12", :flea => "2019-01-22", :worm => "2019-02-12", :owner_id => "", :service_id => "", :vac_id => "")
+Dog.create(:name =>"Oscar", :breed=>"Shih Tzu", :color => "White", :sex => "Male", :image => "https://bowwowinsurance.com.au/wp-content/uploads/2018/10/maltese-shih-tzu-700x700.jpg", :vac_1 => "2019-01-12", :vac_2 => "2019-01-12", :flea => "2019-01-22", :worm => "2019-02-12", :owner_id => "", :service_id => "", :vac_id => "")
+Dog.create(:name =>"Ralph", :breed=>"Shih Tzu", :color => "White & Tan", :sex => "Male", :image => "https://cdn.omlet.co.uk/images/cache/908/768/Dog-Shih_Tzu-A_beautiful_little_Shih_Tzu_standing_tall,_showing_off_its_big_bushy_tail.jpg", :vac_1 => "2019-01-12", :vac_2 => "2019-01-12", :flea => "2019-01-22", :worm => "2019-02-12", :owner_id => "", :service_id => "", :vac_id => "")
+Dog.create(:name =>"Jagga", :breed=>"Chihuahua", :color => "Tan & White", :sex => "Female", :image => "https://www.petbarn.com.au/petspot/app/uploads/2015/01/30.-Chihuahua.jpg", :vac_1 => "2019-01-12", :vac_2 => "2019-01-12", :flea => "2019-01-22", :worm => "2019-02-12", :owner_id => "", :service_id => "", :vac_id => "")
 
 Owner.destroy_all
 Owner.create(:name => "James Aspinall", :email => "james@james.com", :mobile => "0423567498", :address => "9/9 Albion Street, Waverley, NSW, 2024")

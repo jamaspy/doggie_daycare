@@ -1,13 +1,30 @@
+<div class="col-lg-12 text-center">
 <h1> <%= @dog.name %> </h1>
 <%= image_tag @dog.image, :class => "feature" %>
+<div class="row mt-4">
+
+<div class="col-md-4 text-left">
+<p class="lead"><%= @dog.name %>'s Info</p>
 <p><span class = "bold-text">Name:</span> <%= @dog.name %> </p>
 <p><span class = "bold-text">Breed:</span> <%= @dog.breed %></p>
 <p><span class = "bold-text">Color:</span> <%= @dog.color %></p>
 <p><span class = "bold-text">Sex:</span> <%= @dog.sex%></p>
-<p><span class = "bold-text">Vac_1:</span> <%= @dog.vac_1 %></p>
-<p><span class = "bold-text">Vac_2:</span> <%= @dog.vac_2 %></p>
+</div>
+
+<div class="col-md-4">
+<p class="lead"><%= @dog.name %>'s Medicals</p>
+<p><span class = "bold-text">Vaccination:</span> <%= @dog.vac_1 %></p>
+<p><span class = "bold-text">Vaccination:</span> <%= @dog.vac_2 %></p>
 <p><span class = "bold-text">Flea Treatment:</span> <%= @dog.flea %></p>
 <p><span class = "bold-text">Worm Treatment:</span> <%= @dog.worm %></p>
+</div>
+
+<div class="col-md-4">
+<p class="lead"><%= @dog.name %>'s Links</p>
 <p><span class = "bold-text">Owner:</span> <%= @dog.owner_id %></p>
 <p><span class = "bold-text">Services:</span> <%= @dog.service_id %></p>
 <p><span class = "bold-text">Vaccinations:</span> <%= @dog.vac_id %></p>
+</div>
+
+</div>
+</div>
