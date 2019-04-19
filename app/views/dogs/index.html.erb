@@ -1,5 +1,8 @@
 <h1>All Dogs</h1>
+
 <% @dogs.each do |dog| %>
+
+<div class="col-md-3 mt-5">
 <%= image_tag dog.image, :class => "thumbnail"%>
 
 <p><span class = "bold-text">Name:</span> <span class = "index-to-show-link"><%= link_to dog.name, dog_path(dog.id) %></span> </p>
@@ -8,4 +11,5 @@
 <p><span class = "bold-text">Sex:</span> <%= dog.sex%></p>
 
 
+</div>
 <% end %>

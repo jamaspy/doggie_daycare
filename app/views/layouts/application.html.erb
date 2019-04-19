@@ -10,13 +10,97 @@
   </head>
 
   <body>
-  <%=link_to "Home", root_path%>
-  <%=link_to "All Dogs", dogs_path%>
-  <%=link_to "All Owners", owners_path%>
-  <%=link_to "All Services", services_path%>
-  <%=link_to "All Vets", vets_path%>
-  <%=link_to "All Vaccinations", vaccinations_path%>
-  <%=link_to "All Users", users_path%>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dogs
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Add New Dog</a>
+          <a class="dropdown-item" href="#">Search Dogs</a>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item"><%=link_to "View All Dogs", dogs_path%></span>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Owners
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Add New Owner</a>
+          <a class="dropdown-item" href="#">Search Owners</a>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item"><%=link_to "View All Owners", owners_path%></span>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Add New Service</a>
+          <a class="dropdown-item" href="#">Search Services</a>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item"><%=link_to "View All Services", services_path%></span>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vets
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Add New Vet</a>
+          <a class="dropdown-item" href="#">Search Vets</a>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item"><%=link_to "View All Vets", vets_path%></span>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Vaccinations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Add New Vaccination</a>
+          <a class="dropdown-item" href="#">Search Vaccinations</a>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item"><%=link_to "View All Vaccinatioins", vaccinations_path%></span>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Users
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Add New User</a>
+          <a class="dropdown-item" href="#">Search Users</a>
+          <div class="dropdown-divider"></div>
+          <span class="dropdown-item"><%=link_to "View All Users", users_path%></span>
+        </div>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+    </form>
+  </div>
+</nav>
+<div class="container">
+<div class="row">
     <%= yield %>
+    </div>
+    </div>
   </body>
 </html>
