@@ -1,10 +1,23 @@
 
 
-<% @owners.each do |owner| %>
-<div class="col-lg-4 mt-5">
-<p><span class = "bold-text">Name:</span> <span class = "index-to-show-link"><%= link_to owner.name, owner_path(owner.id) %></span> </p>
-<p><span class = "bold-text">Email:</span> <%= owner.email %></p>
-<p><span class = "bold-text">Mobile:</span> <%= owner.mobile %></p>
-<p><span class = "bold-text">Address:</span> <%= owner.address%></p>
-</div>
-<% end %>
+
+
+<table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+  <% @owners.each do |owner| %>
+    <tr>
+      <th scope="row"><%=owner.id%></th>
+      <td><%= link_to owner.name, owner_path(owner.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Add New Owner", new_owner_path %>

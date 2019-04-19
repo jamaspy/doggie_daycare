@@ -27,4 +27,7 @@
 </div>
 
 </div>
+<%= link_to "Back To Dogs", dogs_path %>
+<%= link_to "Edit Dog", edit_dog_path(@dog.id)%>
+<%= link_to "Delete Dog", dog_path(@dog.id), :method => "delete" %>
 </div>

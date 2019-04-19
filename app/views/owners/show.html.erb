@@ -1,6 +1,18 @@
+<div class="col-md-12 mt-5">
 <h1> <%= @owner.name %> </h1>
+</div>
+<div class="col-md-6 mt-4">
+<p class = "lead">Mobile: <%= @owner.mobile %> </p>
+<p class = "lead">Email: <%= @owner.email %></p>
+<p class = "lead">Address: <%= @owner.address %></p>
+<p class = "lead">Dog: </p>
+</div>
+<div class="col-md-6 mt-4">
+<p class="lead">Actions</p>
+<%= link_to "Back To Owners", owners_path %>
+<br />
+<%= link_to "Edit Owner", edit_owner_path(@owner.id)%>
+<br />
+<%= link_to "Delete Owner", owner_path(@owner.id), :method => "delete" %>
 
-<p><span class = "bold-text">Mobile:</span> <%= @owner.mobile %> </p>
-<p><span class = "bold-text">Email:</span> <%= @owner.email %></p>
-<p><span class = "bold-text">Address:</span> <%= @owner.address %></p>
-<p><span class = "bold-text">Dog:</span> </p>
+</div>

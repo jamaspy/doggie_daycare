@@ -15,3 +15,20 @@
  */
  /* Custom bootstrap variables must be set or imported *before* bootstrap. */
  @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+ /*
+ *= require rails_bootstrap_forms
+ */
+body{
+    font-family: 'Raleway', sans-serif;
+}
+ .index-bg{
+    background-image: url(index-bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    color: rgb(17, 17, 17); 
+   
+ }
+ 
