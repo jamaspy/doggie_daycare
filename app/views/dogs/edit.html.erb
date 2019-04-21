@@ -1,22 +1,37 @@
+<div class="col-md-6">
+<div class="form-group mt-3">
 <%= form_for @dog do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, :autofocus => true %>
-    <%= f.label :breed%>
-    <%= f.text_field :breed%>
-   <%= f.label :color%>
-    <%= f.text_field :color%>
-    <%= f.label :sex%>
-    <%= f.text_field :sex%>
-    <%= f.label :Vaccination%>
-    <%= f.text_field :vac_1%>
-    <%= f.label :Vaccination%>
-    <%= f.text_field :vac_2%>
-    <%= f.label :flea%>
-    <%= f.date_field :flea%>
-    <%= f.label :worm%>
-    <%= f.date_field :flea%>
-    <%= f.label :image%>
-    <%= f.url_field :image%>
+    <%= f.label :name, :class => "mt-3" %>
+    <%= f.text_field :name, :autofocus => true, :class => "form-control" %>
+    <%= f.label :breed, :class => "mt-3"%>
+    <%= f.text_field :breed, :class => "form-control"%>
+   <%= f.label :color, :class => "mt-3"%>
+    <%= f.text_field :color, :class => "form-control"%>
+    <%= f.label :sex, :class => "mt-3"%>
+    <%= f.text_field :sex, :class => "form-control"%>
+    <%= f.label :image, :class => "mt-3"%>
+    <%= f.url_field :image, :class => "form-control"%>
+</div>
+</div>
+<div class="col-md-6">
+    <div class="form-group mt-3">
+    
+    <%= f.label :Vaccination, :class => "mt-3"%>
+    <%= f.text_field :vac_1, :class => "form-control"%>
+    <%= f.label :Vaccination, :class => "mt-3"%>
+    <%= f.text_field :vac_2, :class => "form-control"%>
+    <%= f.label :flea, :class => "mt-3"%>
+    <%= f.date_field :flea, :class => "form-control"%>
+    <%= f.label :worm, :class => "mt-3"%>
+    <%= f.date_field :flea, :class => "form-control"%>
+    
+    <%= f.label :owner, :class => "mt-3"%>
+    <%= collection_select(:dog, :owner_id, Owner.all, :id, :name, :class => "form-control") %>
+  
+    <%= f.label :vet, :class => "mt-3"%>
+    <%= collection_select(:dog, :vet_id, Vet.all, :id, :name, :class => "form-control") %>
 
-    <%= f.submit %>
+    <%= f.submit "Update Dog", :class => "btn btn-warning mt-3"%>
 <% end %>
+</div>
+</div>

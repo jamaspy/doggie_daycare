@@ -1,9 +1,18 @@
+<table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @vaccinations.each do |vaccination| %>
+    <tr>
+      <th scope="row"><%=vaccination.id%></th>
+      <td><%= link_to vaccination.name, vaccination_path(vaccination.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<% @vaccinations.each do |vaccination| %>
-
-<p><span class = "index-to-show-link"><%= link_to vaccination.name, vaccination_path(vaccination.id) %> </p>
-
-
-
-
-<% end %>
+<%= link_to "Add New Vaccination", new_vaccination_path %>

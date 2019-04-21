@@ -1,6 +1,40 @@
+<div class="col-md-12 mt-5">
 <h1> <%= @vet.name %> </h1>
+</div>
+<div class="col-md-6 mt-5">
+<p class = "lead">Phone: <%= @vet.phone %> </p>
+<p class = "lead">Address: <%= @vet.address %> </p>
 
-<p><span class = "bold-text">Phone:</span> <%= @vet.phone %> </p>
-<p><span class = "bold-text">Address:</span> <%= @vet.address %> </p>
-<p><span class = "bold-text">Dog_ID:</span> <%= @vet.dog_id %></p>
-<p><span class = "bold-text">Vac_ID:</span> <%= @vet.vac_id %></p>
+</div>
+<div class="col-md-6 mt-5">
+<p class="lead">Actions</p>
+<%= link_to "Back To Vets", vets_path %>
+<br />
+<%= link_to "Edit Vet", edit_vet_path(@vet.id)%>
+<br />
+<%= link_to "Delete Vet", vet_path(@vet.id), :method => "delete" %>
+
+
+
+
+</div>
+
+<table class="table mt-5">
+  <thead>
+    <tr>
+ 
+      <th scope="col">Dog's Name</th>
+      <th scope="col">Owner</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @vet.dogs.each do |dog| %>
+    <tr>
+
+      <td scope="row"><%= link_to dog.name, dog_path(dog.id) %></td>
+      <td scope="row"><%= link_to dog.owner.name, dog_path(dog.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+

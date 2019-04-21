@@ -1,2 +1,9 @@
-<h1>Services#new</h1>
-<p>Find me in app/views/services/new.html.erb</p>
+<div class="form-group mt-3">
+<%= form_for @service do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :autofocus => true, :class => "form-control"  %>
+    <%= f.label :price%>
+    <%= f.text_field :price, :class => "form-control"%>
+    <%= f.submit "Create New Service", :class => "btn btn-primary mt-3" %>
+<% end %>
+ </div>

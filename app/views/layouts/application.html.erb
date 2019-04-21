@@ -30,7 +30,7 @@
             Dogs
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="dogs/new">Add New Dog</a>
+            <span class="dropdown-item"><%=link_to "Add New Dog", new_dog_path%></span>
             <a class="dropdown-item" href="#">Search Dogs</a>
             <div class="dropdown-divider"></div>
             <span class="dropdown-item"><%=link_to "View All Dogs", dogs_path%></span>
@@ -43,7 +43,7 @@
             Owners
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="owners/new">Add New Owner</a>
+            <span class="dropdown-item"><%=link_to "Add New Owner", new_owner_path%></span>
             <a class="dropdown-item" href="#">Search Owners</a>
             <div class="dropdown-divider"></div>
             <span class="dropdown-item"><%=link_to "View All Owners", owners_path%></span>
@@ -55,7 +55,7 @@
             Services
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Add New Service</a>
+            <span class="dropdown-item"><%=link_to "Add New Service", new_service_path%></span>
             <a class="dropdown-item" href="#">Search Services</a>
             <div class="dropdown-divider"></div>
             <span class="dropdown-item"><%=link_to "View All Services", services_path%></span>
@@ -67,7 +67,7 @@
             Vets
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Add New Vet</a>
+            <span class="dropdown-item"><%=link_to "Add New Vet", new_vet_path%></span>
             <a class="dropdown-item" href="#">Search Vets</a>
             <div class="dropdown-divider"></div>
             <span class="dropdown-item"><%=link_to "View All Vets", vets_path%></span>
@@ -79,7 +79,7 @@
             Vaccinations
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Add New Vaccination</a>
+            <span class="dropdown-item"><%=link_to "Add New Vaccination", new_vaccination_path%></span>
             <a class="dropdown-item" href="#">Search Vaccinations</a>
             <div class="dropdown-divider"></div>
             <span class="dropdown-item"><%=link_to "View All Vaccinatioins", vaccinations_path%></span>
@@ -91,7 +91,7 @@
             Users
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Add New User</a>
+            <span class="dropdown-item"><%=link_to "Add New User", new_user_path%></span>
             <a class="dropdown-item" href="#">Search Users</a>
             <div class="dropdown-divider"></div>
             <span class="dropdown-item"><%=link_to "View All Users", users_path%></span>
@@ -100,8 +100,8 @@
 
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+        
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
       </form>
     </div>
   </nav>

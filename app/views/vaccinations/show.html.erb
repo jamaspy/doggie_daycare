@@ -2,3 +2,9 @@
 
 <p><span class = "bold-text">Price:</span> <%= @vaccination.price %> </p>
 <p><span class = "bold-text">Dog_ID:</span> <%= @vaccination.dog_id %></p>
+<p class="lead">Actions</p>
+<%= link_to "Back To Vaccinations", vaccinations_path %>
+<br />
+<%= link_to "Edit Vaccination", edit_vaccination_path(@vaccination.id)%>
+<br />
+<%= link_to "Delete Vaccination", vaccination_path(@vaccination.id), :method => "delete" %>

@@ -1,8 +1,19 @@
 
-<% @vets.each do |vet| %>
-<div class="col-md-3 mt-5">
-<p><span class = "bold-text">Name:</span> <span class = "index-to-show-link"><%= link_to vet.name, vet_path(vet.id) %></span></p>
-<p><span class = "bold-text">Phone:</span> <%= vet.phone %></p>
-<p><span class = "bold-text">Address:</span> <%= vet.address %></p>
-</div>
-<% end %>
+
+
+<table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @vets.each do |vet| %>
+    <tr>
+      <th scope="row"><%=vet.id%></th>
+      <td><%= link_to vet.name, vet_path(vet.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

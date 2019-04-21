@@ -1,2 +1,10 @@
-<h1>Vaccinations#new</h1>
-<p>Find me in app/views/vaccinations/new.html.erb</p>
+<div class="form-group mt-3">
+<%= form_for @vaccination do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :autofocus => true, :class => "form-control"  %>
+    <%= f.label :price%>
+    <%= f.text_field :price, :class => "form-control"%>
+    
+    <%= f.submit "Create New Vaccination", :class => "btn btn-primary mt-3" %>
+<% end %>
+ </div>

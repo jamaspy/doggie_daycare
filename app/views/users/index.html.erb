@@ -1,6 +1,21 @@
 
-<% @users.each do |user| %>
-<p><span class = "bold-text">Name:</span> <span class = "index-to-show-link"><%= link_to user.name, user_path(user.id) %></span></p>
-<p><span class = "bold-text">Email:</span> <%= user.email %></p>
-<p><span class = "bold-text">Password:</span> <%= user.password_digest %></p>
-<% end %>
+
+
+<table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <th scope="row"><%=user.id%></th>
+      <td><%= link_to user.name, user_path(user.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Add New User", new_user_path %>
