@@ -1,4 +1,4 @@
 class Vaccination < ApplicationRecord
-    has_many :vets
-    has_many :dogs
+    has_and_belongs_to_many :vets
+    has_and_belongs_to_many :dogs
 end

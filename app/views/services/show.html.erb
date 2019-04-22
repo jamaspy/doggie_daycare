@@ -5,7 +5,23 @@
 </div>
 <div class="col-md-6 mt-4">
 <p class = "lead">Price: $<%= @service.price %> </p>
-<p class = "lead">Service_ID: <%= @service_id %></p>
+<table class="table mt-5">
+  <thead>
+    <tr>
+ 
+      <th scope="col">Dog's Name</th>
+      <th scope="col">Owner</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @service.dogs.each do |dog| %>
+    <tr>
+      <td scope="row"><%= link_to dog.name, dog_path(dog.id) %></td>
+      <td scope="row"><%= link_to dog.owner.name, dog_path(dog.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 </div>
 <div class="col-md-6 mt-4">
 <p class="lead">Actions</p>

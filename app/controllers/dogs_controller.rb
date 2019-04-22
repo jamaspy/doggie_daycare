@@ -32,6 +32,8 @@ class DogsController < ApplicationController
       redirect_to dogs_path
     end
 
+    
+
     private
     def dog_params
       params.require(:dog).permit(:name, :breed, :color, :sex, :image, :vac_1, :vac_2, :flea, :worm, :owner_id, :service_id, :vac_id, :vet_id)

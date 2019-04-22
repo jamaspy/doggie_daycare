@@ -1,3 +1,3 @@
 class Service < ApplicationRecord
-    has_many :dogs
+    has_and_belongs_to_many :dogs
 end
