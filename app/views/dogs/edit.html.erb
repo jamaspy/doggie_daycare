@@ -31,8 +31,7 @@
     <%= f.label :vet, :class => "mt-3"%>
     <%= collection_select(:dog, :vet_id, Vet.all, :id, :name, :class => "form-control") %>
 
-    <%= f.label :services, :class => "mt-3"%>
-    <%= collection_select(:dog, :service_id, Service.all, :id, :name, :class => "form-control") %>
+   
     
     <%= f.label :vaccinations, :class => "mt-3"%>
     <%= collection_select(:dog, :vac_id, Vaccination.all, :id, :name, :class => "form-control") %>

@@ -1,3 +1,4 @@
+<div class="row">
 <div class="col-lg-12 text-center">
 <h1> <%= @dog.name %> </h1>
 <%= image_tag @dog.image, :class => "feature" %>
@@ -21,10 +22,18 @@
 
 <div class="col-md-4">
 <p class="lead"><%= @dog.name %>'s Links</p>
-<p>Owner: <% if @dog.owner.present?%><%= link_to @dog.owner.name, owner_path(@dog.owner.id) %><% end%></p>
-<p>Vet: <% if @dog.vet.present?%><%= link_to @dog.vet.name, vet_path(@dog.vet.id) %><% end%></p>
-<p>Services: <% if @dog.services.present?%><%= link_to @dog.service.name, service_path(@dog.serivce.id) %><% end%></p>
-<p>Vaccinations: <% if @dog.vaccinations.present?%><%= link_to @dog.vaccinations.name, vaccinations_path(@dog.vaccinations.ids) %><%end%></p>
+
+<p>Owner: <% if @dog.owner.present?%>
+          <%= link_to @dog.owner.name, owner_path(@dog.owner.id) %>
+          <% end%></p>
+<p>Vet:   <% if @dog.vet.present?%>
+          <%= link_to @dog.vet.name, vet_path(@dog.vet.id) %>
+          <% end%></p>
+
+<p>Services: <% if @dog.services.present?%>
+             <%= link_to @dog.services.name, @dog.services %>
+             <% end%></p>
+
 
 
 </div>
@@ -35,4 +44,5 @@
 <%= link_to "Back To Dogs", dogs_path %>
 <%= link_to "Edit Dog", edit_dog_path(@dog.id)%>
 <%= link_to "Delete Dog", dog_path(@dog.id), :method => "delete" %>
+</div>
 </div>

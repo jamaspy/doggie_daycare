@@ -11,7 +11,7 @@ class CreateDogs < ActiveRecord::Migration[5.2]
       t.date :flea
       t.date :worm
       t.integer :owner_id
-      t.integer :service_id
+  
       t.integer :vac_id
 
       t.timestamps
