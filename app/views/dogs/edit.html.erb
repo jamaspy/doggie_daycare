@@ -16,10 +16,8 @@
 <div class="col-md-6">
     <div class="form-group mt-3">
     
-    <%= f.label :Vaccination, :class => "mt-3"%>
-    <%= f.text_field :vac_1, :class => "form-control"%>
-    <%= f.label :Vaccination, :class => "mt-3"%>
-    <%= f.text_field :vac_2, :class => "form-control"%>
+    <%= f.label :vaccinations, :class => "mt-3"%>
+    <%= f.collection_check_boxes(:vaccination_ids, Vaccination.all, :id, :name) %>
     <%= f.label :flea, :class => "mt-3"%>
     <%= f.date_field :flea, :class => "form-control"%>
     <%= f.label :worm, :class => "mt-3"%>
@@ -30,11 +28,9 @@
   
     <%= f.label :vet, :class => "mt-3"%>
     <%= collection_select(:dog, :vet_id, Vet.all, :id, :name, :class => "form-control") %>
-
-   
-    
-    <%= f.label :vaccinations, :class => "mt-3"%>
-    <%= collection_select(:dog, :vac_id, Vaccination.all, :id, :name, :class => "form-control") %>
+    <br />
+    <%= f.label :services, :class => "mt-3"%>
+    <%= f.collection_check_boxes(:service_ids, Service.all, :id, :name) %>
 
     <%= f.submit "Update Dog", :class => "btn btn-warning mt-3"%>
 <% end %>

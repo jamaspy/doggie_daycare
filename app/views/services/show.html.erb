@@ -17,7 +17,7 @@
   <% @service.dogs.each do |dog| %>
     <tr>
       <td scope="row"><%= link_to dog.name, dog_path(dog.id) %></td>
-      <td scope="row"><%= link_to dog.owner.name, owner_path(owner.id) %></td>
+      <td scope="row"><%= link_to dog.owner.name, owner_path(dog.owner.id) %></td>
     </tr>
     <% end %>
   </tbody>

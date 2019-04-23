@@ -14,8 +14,17 @@
 
 <div class="col-md-4">
 <p class="lead"><%= @dog.name %>'s Medicals</p>
-<p><span class = "bold-text">Vaccination:</span> <%= @dog.vac_1 %></p>
-<p><span class = "bold-text">Vaccination:</span> <%= @dog.vac_2 %></p>
+<p>Vaccination:
+                <% if @dog.vaccinations.present?%>
+                <ul>
+                    <% @dog.vaccinations.each do |vaccination| %>
+                        <li><%= link_to vaccination.name, vaccination_path(vaccination.id) %></li>
+                    <% end %>
+                </ul>
+                <% else %>
+                    <p>No Known Vacs</p>
+               <% end%>
+               </p>
 <p><span class = "bold-text">Flea Treatment:</span> <%= @dog.flea %></p>
 <p><span class = "bold-text">Worm Treatment:</span> <%= @dog.worm %></p>
 </div>
@@ -31,7 +40,9 @@
           <% end%></p>
 
 <p>Services: <% if @dog.services.present?%>
-             <%= link_to @dog.services.name, @dog.services %>
+                <% @dog.services.each do |service| %>
+                    <%= link_to service.name, service_path(service.id) %>
+                <% end %>
              <% end%></p>
 
 
