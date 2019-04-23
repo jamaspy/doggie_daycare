@@ -10,16 +10,16 @@ class OwnersController < ApplicationController
   def new
     @owner = Owner.new
   end
-  
+
   def create
     owner = Owner.create owner_params
-    redirect_to owner_path(owner.id)
+    redirect_to new_dog_path
   end
 
   def edit
     @owner = Owner.find params[:id]
   end
-  
+
   def update
     owner = Owner.find params[:id]
     owner.update owner_params
@@ -33,8 +33,8 @@ class OwnersController < ApplicationController
   end
 
   private
+
   def owner_params
     params.require(:owner).permit(:name, :email, :mobile, :address)
   end
-
 end

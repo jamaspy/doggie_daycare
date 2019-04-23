@@ -16,11 +16,11 @@
 <p class="lead"><%= @dog.name %>'s Medicals</p>
 <p>Vaccination:
                 <% if @dog.vaccinations.present?%>
-                <ul>
+                
                     <% @dog.vaccinations.each do |vaccination| %>
-                        <li><%= link_to vaccination.name, vaccination_path(vaccination.id) %></li>
+                        <%= link_to vaccination.name, vaccination_path(vaccination.id) %>
                     <% end %>
-                </ul>
+                
                 <% else %>
                     <p>No Known Vacs</p>
                <% end%>

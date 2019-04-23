@@ -1,20 +1,15 @@
-
-
-
-
-<table class="table mt-5">
-  <thead>
+<table class="table mt-5 text-center">
+  <thead class="thead-dark">
     <tr>
-      <th scope="col">ID</th>
       <th scope="col">Name</th>
+      <th scope="col">Number Of Dogs</th>
     </tr>
   </thead>
-  
   <tbody>
   <% @owners.each do |owner| %>
     <tr>
-      <th scope="row"><%=owner.id%></th>
-      <td><%= link_to owner.name, owner_path(owner.id) %></td>
+      <th scope="row"><%= link_to owner.name, owner_path(owner.id) %></th>
+      <td><%= owner.dogs.count %></td>
     </tr>
     <% end %>
   </tbody>

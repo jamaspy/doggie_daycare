@@ -1,12 +1,23 @@
 
-
+<div class="row">
 <div class="col-md-12 mt-5">
 <h1> <%= @service.name %> </h1>
 </div>
+</div>
+<div class="row">
 <div class="col-md-6 mt-4">
 <p class = "lead">Price: $<%= @service.price %> </p>
+<p class="lead">Actions</p>
+<%= link_to "Back To Services", services_path %>
+<br />
+<%= link_to "Edit Service", edit_service_path(@service.id)%>
+<br />
+<%= link_to "Delete Service", service_path(@service.id), :method => "delete" %>
+
+</div>
+<div class="col-md-6 mt-4">
 <table class="table mt-5">
-  <thead>
+<thead class="thead-dark">
     <tr>
  
       <th scope="col">Dog's Name</th>
@@ -23,12 +34,4 @@
   </tbody>
 </table>
 </div>
-<div class="col-md-6 mt-4">
-<p class="lead">Actions</p>
-<%= link_to "Back To Services", services_path %>
-<br />
-<%= link_to "Edit Service", edit_service_path(@service.id)%>
-<br />
-<%= link_to "Delete Service", service_path(@service.id), :method => "delete" %>
-
 </div>
