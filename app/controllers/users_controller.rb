@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :authorise_user, :except => [:index]
+
   def index
     @users = User.all
   end
@@ -11,10 +14,18 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+
   def create
-    user = User.create user_params
-    redirect_to user_path(user.id)
+  user = User.create(user_params)
+  if @user.save
+    flash[:notice] = 'User was successfully created.'
+    redirect_to user_path(user)
+  else
+    flash.now[:error] = 'Could not create user.'
+    render 'new'
   end
+end
+
 
   def edit
     @user = User.find params[:id]
