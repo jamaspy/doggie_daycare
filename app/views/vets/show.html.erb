@@ -1,40 +1,35 @@
-<div class="col-md-12 mt-5">
-<h1> <%= @vet.name %> </h1>
+<div class="container">
+  <div class="col-md-12 mt-5">
+    <h1> <%= @vet.name %> </h1>
+  </div>
+  <div class="col-md-6 mt-5">
+    <p class="lead">Phone: <%= @vet.phone %> </p>
+    <p class="lead">Address: <%= @vet.address %> </p>
+
+  </div>
+  <div class="col-md-6 mt-5">
+
+    <%= link_to "Back To Vets", vets_path, :class => "btn btn-outline-info" %>
+
+    <%= link_to "Edit Vet", edit_vet_path(@vet.id), :class => "btn btn-outline-warning"%>
+   
+    <%= link_to "Delete Vet", vet_path(@vet.id), :method => "delete", :class => "btn btn-outline-danger" %>
+
+  </div>
+  <table class="table mt-5">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Dog's Name</th>
+        <th scope="col">Owner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vet.dogs.each do |dog| %>
+      <tr>
+        <td scope="row"><%= link_to dog.name, dog_path(dog.id) %></td>
+        <td scope="row"><%= link_to dog.owner.name, dog_path(dog.id) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-<div class="col-md-6 mt-5">
-<p class = "lead">Phone: <%= @vet.phone %> </p>
-<p class = "lead">Address: <%= @vet.address %> </p>
-
-</div>
-<div class="col-md-6 mt-5">
-<p class="lead">Actions</p>
-<%= link_to "Back To Vets", vets_path %>
-<br />
-<%= link_to "Edit Vet", edit_vet_path(@vet.id)%>
-<br />
-<%= link_to "Delete Vet", vet_path(@vet.id), :method => "delete" %>
-
-
-
-
-</div>
-
-<table class="table mt-5">
-  <thead class="thead-dark">
-    <tr>
- 
-      <th scope="col">Dog's Name</th>
-      <th scope="col">Owner</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @vet.dogs.each do |dog| %>
-    <tr>
-
-      <td scope="row"><%= link_to dog.name, dog_path(dog.id) %></td>
-      <td scope="row"><%= link_to dog.owner.name, dog_path(dog.id) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
