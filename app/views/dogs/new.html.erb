@@ -1,31 +1,36 @@
 
-<div class="form-group mt-3">
-<%= form_for @dog do |f| %>
-    <%= f.label :name, :class => "mt-2" %>
-    <%= f.text_field :name, :autofocus => true, :class => "form-control"  %>
-    <%= f.label :breed, :class => "mt-2"%>
-    <%= f.text_field :breed, :class => "form-control" %>
-    <%= f.label :color, :class => "mt-2"%>
-    <%= f.text_field :color, :class => "form-control" %>
-    <%= f.label :sex, :class => "mt-2"%>
-    <%= f.text_field :sex, :class => "form-control" %>
-   
-    <%= f.label :Vaccination, :class => "form-check-label mt-2"%>
-    <%= f.collection_check_boxes(:vaccination_ids, Vaccination.all, :id, :name)do |b| %>
-  <%= b.label(class:"label-checkbox") { b.check_box + b.text } %>
-<% end %>
-
-    
-    
-
-    <%= f.label :flea, :class => "mt-2"%>
-    <%= f.date_field :flea, :class => "form-control" %>
-    <%= f.label :worm, :class => "mt-2"%>
-    <%= f.date_field :flea, :class => "form-control" %>
-    <%= f.label :image, :class => "mt-2"%>
-    <%= f.url_field :image, :class => "form-control" %>
-    <%= f.label :owner, :class => "mt-3"%>
-    <%= collection_select(:dog, :owner_id, Owner.all, :id, :name, :class => "form-control") %>
-<br />
-    <%= f.submit "Create New Dog", :class => "btn btn-primary mt-3" %>
-<% end %>
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="form-group">
+            <%= form_for @dog do |f| %>
+            <%= f.label :name, :class => "mt-2" %>
+            <%= f.text_field :name, :autofocus => true, :class => "form-control"  %>
+            <%= f.label :breed, :class => "mt-2"%>
+            <%= f.text_field :breed, :class => "form-control" %>
+            <%= f.label :color, :class => "mt-2"%>
+            <%= f.text_field :color, :class => "form-control" %>
+            <%= f.label :sex, :class => "mt-2"%>
+            <%= f.text_field :sex, :class => "form-control" %>
+            <%= f.label :flea, :class => "mt-2"%>
+            <%= f.date_field :flea, :class => "form-control" %>
+            <%= f.label :worm, :class => "mt-2"%>
+            <%= f.date_field :worm, :class => "form-control" %>
+        </div>
+    </div>    
+        <div class="col-md-6">
+            <%= f.label :image, :class => "mt-2"%>
+            <%= f.url_field :image, :class => "form-control" %>
+            <div class="display-inline mt-3 mb-2">
+                <%= f.label :Vaccination, :class => "form-check-label mt-2"%>
+                <%= f.collection_check_boxes(:vaccination_ids, Vaccination.all, :id, :name)do |b| %>
+                <%= b.label(class:"display-inline-block") { b.check_box + b.text } %>
+                <% end %>
+            </div>
+            <%= f.label :owner, :class => "mt-3"%>
+            <%= collection_select(:dog, :owner_id, Owner.all, :id, :name, :class => "form-control") %>
+            <br />
+            <%= f.submit "Create New Dog", :class => "btn btn-outline-info mt-5 mb-3" %>
+            <% end %>
+        </div>
+    </div>
+</div>

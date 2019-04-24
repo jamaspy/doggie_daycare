@@ -1,59 +1,54 @@
-<div class="row">
-<div class="col-lg-12 text-center">
-<h1> <%= @dog.name %> </h1>
-<%= image_tag @dog.image, :class => "feature" %>
-<div class="row mt-4">
+<div class="row mt-3">
+    <div class="col-lg-12 text-center">
+        <h1> <%= @dog.name %> </h1>
+        <%= image_tag @dog.image, :class => "feature" %>
+        <div class="justify-content-center">
+            <%= link_to "Back To Dogs", dogs_path, :class => "btn btn-outline-info mt-3" %>
+            <%= link_to "Edit Dog", edit_dog_path(@dog.id), :class => "btn btn-outline-warning mt-3"%>
+            <%= link_to "Delete Dog", dog_path(@dog.id), :method => "delete", :class => "btn btn-outline-danger mt-3", data: {confirm: "Are you sure?"}%>
+        </div>
 
-<div class="col-md-4 text-left">
-<p class="lead"><%= @dog.name %>'s Info</p>
-<p><span class = "bold-text">Name:</span> <%= @dog.name %> </p>
-<p><span class = "bold-text">Breed:</span> <%= @dog.breed %></p>
-<p><span class = "bold-text">Color:</span> <%= @dog.color %></p>
-<p><span class = "bold-text">Sex:</span> <%= @dog.sex%></p>
-</div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <p class="lead"><%= @dog.name %>'s Info</p>
+            <p><span class="bold-text">Name:</span> <%= @dog.name %> </p>
+            <p><span class="bold-text">Breed:</span> <%= @dog.breed %></p>
+            <p><span class="bold-text">Color:</span> <%= @dog.color %></p>
+            <p><span class="bold-text">Sex:</span> <%= @dog.sex%></p>
+        </div>
 
-<div class="col-md-4">
-<p class="lead"><%= @dog.name %>'s Medicals</p>
-<p>Vaccination:
+        <div class="col-md-4">
+            <p class="lead"><%= @dog.name %>'s Medicals</p>
+            <p>Vaccination:
                 <% if @dog.vaccinations.present?%>
-                
-                    <% @dog.vaccinations.each do |vaccination| %>
-                        <%= link_to vaccination.name, vaccination_path(vaccination.id) %>
-                    <% end %>
-                
-                <% else %>
-                    <p>No Known Vacs</p>
-               <% end%>
-               </p>
-<p><span class = "bold-text">Flea Treatment:</span> <%= @dog.flea %></p>
-<p><span class = "bold-text">Worm Treatment:</span> <%= @dog.worm %></p>
-</div>
 
-<div class="col-md-4">
-<p class="lead"><%= @dog.name %>'s Links</p>
-
-<p>Owner: <% if @dog.owner.present?%>
-          <%= link_to @dog.owner.name, owner_path(@dog.owner.id) %>
-          <% end%></p>
-<p>Vet:   <% if @dog.vet.present?%>
-          <%= link_to @dog.vet.name, vet_path(@dog.vet.id) %>
-          <% end%></p>
-
-<p>Services: <% if @dog.services.present?%>
-                <% @dog.services.each do |service| %>
-                    <%= link_to service.name, service_path(service.id) %>
+                <% @dog.vaccinations.each do |vaccination| %>
+                <%= link_to vaccination.name, vaccination_path(vaccination.id) %>
                 <% end %>
-             <% end%></p>
 
+                <% else %>
+                <p>No Known Vacs</p>
+                <% end%>
+            </p>
+            <p><span class="bold-text">Flea Treatment:</span> <%= @dog.flea %></p>
+            <p><span class="bold-text">Worm Treatment:</span> <%= @dog.worm %></p>
+        </div>
 
+        <div class="col-md-4">
+            <p class="lead"><%= @dog.name %>'s Links</p>
 
-</div>
+            <p>Owner: <% if @dog.owner.present?%>
+                <%= link_to @dog.owner.name, owner_path(@dog.owner.id) %>
+                <% end%></p>
+            <p>Vet: <% if @dog.vet.present?%>
+                <%= link_to @dog.vet.name, vet_path(@dog.vet.id) %>
+                <% end%></p>
 
+            <p>Services: <% if @dog.services.present?%>
+                <% @dog.services.each do |service| %>
+                <%= link_to service.name, service_path(service.id) %>
+                <% end %>
+                <% end%></p>
+        </div>
 
-
-</div>
-<%= link_to "Back To Dogs", dogs_path %>
-<%= link_to "Edit Dog", edit_dog_path(@dog.id)%>
-<%= link_to "Delete Dog", dog_path(@dog.id), :method => "delete" %>
-</div>
-</div>
+    </div>

@@ -1,37 +1,32 @@
+<div class="row" >
+  <div class="col-md-12 mt-5">
+    <h1> <%= @service.name %> </h1>
+    <p class="lead">Price: $<%= @service.price %> </p>
+    <%= link_to "Back To Services", services_path, :class => "btn btn-outline-info mt-3" %>
+    <%= link_to "Edit Service", edit_service_path(@service.id), :class => "btn btn-outline-warning mt-3"%>
+    <%= link_to "Delete Service", service_path(@service.id), :method => "delete", :class => "btn btn-outline-danger mt-3" %>
+  </div>
+</div>
 
-<div class="row">
-<div class="col-md-12 mt-5">
-<h1> <%= @service.name %> </h1>
-</div>
-</div>
-<div class="row">
-<div class="col-md-6 mt-4">
-<p class = "lead">Price: $<%= @service.price %> </p>
-<p class="lead">Actions</p>
-<%= link_to "Back To Services", services_path %>
-<br />
-<%= link_to "Edit Service", edit_service_path(@service.id)%>
-<br />
-<%= link_to "Delete Service", service_path(@service.id), :method => "delete" %>
+<div class="row mt-5">
+  <div class="col-md-12 mt-4">
+<h1>Current Bookings</h1>
+    <table class="table mt-5">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Dog's Name</th>
+          <th scope="col">Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @service.dogs.each do |dog| %>
+        <tr>
+          <td scope="row"><%= link_to dog.name, dog_path(dog.id) %></td>
+          <td scope="row"><%= link_to dog.owner.name, owner_path(dog.owner.id) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-</div>
-<div class="col-md-6 mt-4">
-<table class="table mt-5">
-<thead class="thead-dark">
-    <tr>
- 
-      <th scope="col">Dog's Name</th>
-      <th scope="col">Owner</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @service.dogs.each do |dog| %>
-    <tr>
-      <td scope="row"><%= link_to dog.name, dog_path(dog.id) %></td>
-      <td scope="row"><%= link_to dog.owner.name, owner_path(dog.owner.id) %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+  </div>
 </div>

@@ -1,14 +1,5 @@
 <div class="row">
     <div class="col-md-12 index-bg">
-        <h1>Welcome To Bronte Dog Day Care, <%= @current_user.name %></h1>
-<div class="form-group mt-3">
-
- </div>
-    
-        <div class="col-md-6">
-            <h2>Current Stats</h2>
-            <p class="lead">Total Number Of Dogs: <%= @dogs.count %></p>
-            <p class="lead">Total Number Of Owners: <%= @owners.count %></p>
-        </div>
+        <h1>Welcome To Bronte Dog Day Care,<% if @current_user.present? %><%= @current_user.name %><%end%></h1>
     </div>
 </div>
