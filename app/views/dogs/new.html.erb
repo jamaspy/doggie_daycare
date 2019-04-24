@@ -18,6 +18,8 @@
         </div>
     </div>    
         <div class="col-md-6">
+             <%= f.label "Animal Image: " %>
+            <%= f.cl_image_upload :image %>
             <%= f.label :image, :class => "mt-2"%>
             <%= f.url_field :image, :class => "form-control" %>
             <div class="display-inline mt-3 mb-2">

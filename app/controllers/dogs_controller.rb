@@ -14,6 +14,15 @@ class DogsController < ApplicationController
 
   def create
     dog = Dog.create dog_params
+
+    if params[:file].present?
+      # Then call Cloudinary's upload method, passing in the file in params
+      req = Cloudinary::Uploader.upload(params[:file])
+      # Using the public_id allows us to use Cloudinary's powerful image
+      # transformation methods.
+      dog.image = req["public_id"]
+      dog.save
+    end
     redirect_to dog_path(dog.id)
   end
 
@@ -24,6 +33,15 @@ class DogsController < ApplicationController
   def update
     dog = Dog.find params[:id]
     dog.update dog_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      dog.image = req["public_id"]
+    end
+    # We're using update_attributes here because we don't want to make a PUT request
+    # (.update to update the attributes in dog_params, then .save to update the
+    # image)
+    dog.update_attributes(dog_params)
+    dog.save
     redirect_to dogs_path(dog.id)
   end
 

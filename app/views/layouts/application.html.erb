@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
+  <%= cloudinary_js_config %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -105,14 +106,14 @@
       <% if @current_user.present? %>
       <%= link_to "Sign Out #{ @current_user.name}", login_path, :method => "delete", :class => "btn btn-outline-secondary mr-2" %>
       <% else%>
-      <%= link_to "Sign In", login_path, :class => "btn btn-outline-info mr-3" %>
-      <%= link_to "SignUp", new_user_path, :class => "btn btn-outline-info mr-2" %>
+      <%= link_to "Sign In", login_path, :class => "btn btn-outline-light mr-3" %>
+      <%= link_to "SignUp", new_user_path, :class => "btn btn-outline-light mr-2" %>
       <% end %>
       </form>
     </div>
   </nav>
 
-  <div class="container justify-content-center">
+  <div class="container-fluid justify-content-center">
    
       <%= yield %>
   
