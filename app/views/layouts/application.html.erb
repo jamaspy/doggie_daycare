@@ -96,17 +96,22 @@
             <span class="dropdown-item"><%=link_to "Add New User", new_user_path%></span>
             <a class="dropdown-item" href="#">Search Users</a>
             <div class="dropdown-divider"></div>
-            <span class="dropdown-item"><%=link_to "View All Users", users_path%></span>
+            <span class="dropdown-item"><% if @current_user.present? %><% if @current_user.admin?%><%=link_to "View All Users", users_path%><% end %><% end %></span>
           </div>
         </li>
 
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
+      <% if @current_user.present? %>
+      <%= link_to "Sign Out #{ @current_user.name}", login_path, :method => "delete", :class => "btn btn-outline-secondary mr-2" %>
+      <% else%>
+      <%= link_to "Sign In", login_path, :class => "btn btn-outline-info mr-3" %>
+      <%= link_to "SignUp", new_user_path, :class => "btn btn-outline-info mr-2" %>
+      <% end %>
       </form>
     </div>
   </nav>
+
   <div class="container">
    
       <%= yield %>

@@ -1,7 +1,29 @@
-<h1> <%= @user.name %> </h1>
+<h1 class="mt-3"> <%= @user.name %> </h1>
 
-<p><span class = "bold-text">Email:</span> <%= @user.email %> </p>
-<p><span class = "bold-text">Password:</span> <%= @user.password_digest %> </p>
+
+<table class="table mt-5">
+ <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Admin Rights</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td scope="row"><%= @user.name %></td>
+      <td scope="row"> <%= @user.email %></td>
+      <td scope="row"><% if @user.admin == true %><%= "Yes" %><% else%><%= "No" %><% end%></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
 <p class="lead">Actions</p>
 <%= link_to "Back To User", users_path %>
 <br />
