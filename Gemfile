@@ -39,6 +39,7 @@ end
   gem 'bootstrap', '~> 4.3.1'
   gem "bootstrap_form", ">= 4.2.0"
   gem 'jquery-rails'
+  gem 'cloudinary'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
