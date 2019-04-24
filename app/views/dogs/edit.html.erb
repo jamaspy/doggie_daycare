@@ -39,7 +39,7 @@
                 <%= f.label :owner, :class => "mt-3 mr-2"%>
                 <%= collection_select(:dog, :owner_id, Owner.all, :id, :name, :class => "form-control") %>
 
-                <%= f.label :vet, :class => "mt-3 ml-5 mr-2"%>
+                <%= f.label :vet, :class => "mt-3 ml-3 mr-2"%>
                 <%= collection_select(:dog, :vet_id, Vet.all, :id, :name, :class => "form-control") %>
                 <% end %>
             </div>
