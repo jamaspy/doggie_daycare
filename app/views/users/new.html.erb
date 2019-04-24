@@ -5,7 +5,9 @@
     <%= f.label :email, :class => "mt-3"%>
     <%= f.email_field :email, :class => "form-control"%>
     <%= f.label :password, :class => "mt-3"%>
-    <%= f.text_field :password_digest, :class => "form-control"%>
+    <%= f.text_field :password, :class => "form-control"%>
+    <%= f.label :confirm_password, :class => "mt-3"%>
+    <%= f.text_field :password_confirmation, :class => "form-control"%>
     <%= f.submit "Create New User", :class => "btn btn-primary mt-3" %>
 <% end %>
  </div>
