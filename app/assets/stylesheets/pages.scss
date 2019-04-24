@@ -1,0 +1,15 @@
+.welcome-page {
+    background-image: url(welcome-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+    height: 100vh;
+
+    & h1{
+        margin-top: 2%;
+    }
+
+}

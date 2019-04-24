@@ -1,20 +1,22 @@
-<div class="row">
-    <div class="col-md-12 mt-5">
-        <p class="lead">Name:  <%= @owner.name %> </p>
-        <p class="lead">Mobile:  <%= @owner.mobile %> </p>
-        <p class="lead">Email:  <%= @owner.email %></p>
-        <p class="lead">Address:  <%= @owner.address %></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <p class="lead">Name: <%= @owner.name %> </p>
+            <p class="lead">Mobile: <%= @owner.mobile %> </p>
+            <p class="lead">Email: <%= @owner.email %></p>
+            <p class="lead">Address: <%= @owner.address %></p>
 
-        <%= link_to "Back To Owners", owners_path, :class => "btn btn-outline-info" %>
-        <%= link_to "Edit Owner", edit_owner_path(@owner.id), :class => "btn btn-outline-warning" %>
-        <%= link_to "Delete Owner", owner_path(@owner.id), :method => "delete", :class => "btn btn-outline-danger", data: {confirm: "Are You Sure?"}  %>
+            <%= link_to "Back To Owners", owners_path, :class => "btn btn-outline-info" %>
+            <%= link_to "Edit Owner", edit_owner_path(@owner.id), :class => "btn btn-outline-warning" %>
+            <%= link_to "Delete Owner", owner_path(@owner.id), :method => "delete", :class => "btn btn-outline-danger", data: {confirm: "Are You Sure?"}  %>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-md-12 mt-5">
-        <% @owner.dogs.each do |dog| %>
-        <%= link_to image_tag(dog.image, :class => "thumbnail"), dog_path(dog.id) %>
-        <% end %>
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <% @owner.dogs.each do |dog| %>
+            <%= link_to image_tag(dog.image, :class => "thumbnail"), dog_path(dog.id) %>
+            <% end %>
+        </div>
     </div>
 </div>

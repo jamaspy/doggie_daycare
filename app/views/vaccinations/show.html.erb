@@ -1,30 +1,27 @@
 <div class="container">
-<div class="row mt-5">
-    <div class="col-md-6">
-        <h1> <%= @vaccination.name %> </h1>
-        <p class="lead">Price:$<%= @vaccination.price %> </p>
-        <p class="lead">Actions</p>
-        <%= link_to "Back To Vaccinations", vaccinations_path %>
-        <br />
-        <%= link_to "Edit Vaccination", edit_vaccination_path(@vaccination.id)%>
-        <br />
-        <%= link_to "Delete Vaccination", vaccination_path(@vaccination.id), :method => "delete" %>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h1> <%= @vaccination.name %> </h1>
+            <p class="lead">Price:$<%= @vaccination.price %> </p>
+            <%= link_to "Back To Vaccinations", vaccinations_path, :class => "btn btn-outline-info" %>
+            <%= link_to "Edit Vaccination", edit_vaccination_path(@vaccination.id), :class => "btn btn-outline-warning" %>
+            <%= link_to "Delete Vaccination", vaccination_path(@vaccination.id), :method => "delete", :class => "btn btn-outline-danger"  %>
+        </div>
+        <div class="col-md-6">
+            <table class="table mt-5 text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Dogs With This Vaccination</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @vaccination.dogs.each do |dog| %>
+                    <tr>
+                        <td><%= link_to dog.name, dog_path(dog.id) %></td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="col-md-6">
-        <table class="table mt-5 text-center">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Dogs With This Vaccination</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @vaccination.dogs.each do |dog| %>
-                <tr>
-                    <td><%= link_to dog.name, dog_path(dog.id) %></td>
-                </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
-</div>
 </div>
