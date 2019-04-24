@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Doggie_DayCare</title>
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
   <%= cloudinary_js_config %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
- 
+
 </head>
 
 <body>
@@ -25,7 +28,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-      <% if @current_user.present? %>
+        <% if @current_user.present? %>
         <li class="nav-item active">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
@@ -86,7 +89,7 @@
             <span class="dropdown-item"><%=link_to "View All Vaccinatioins", vaccinations_path%></span>
           </div>
         </li>
-        
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -95,27 +98,28 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <span class="dropdown-item"><%=link_to "Add New User", new_user_path%></span>
             <div class="dropdown-divider"></div>
-            <span class="dropdown-item"><% if @current_user.present? %><% if @current_user.admin?%><%=link_to "View All Users", users_path%><% end %><% end %></span>
+            <span
+              class="dropdown-item"><% if @current_user.present? %><% if @current_user.admin?%><%=link_to "View All Users", users_path%><% end %><% end %></span>
           </div>
         </li>
         <%end%>
 
       </ul>
       <form class="form-inline my-2 my-lg-0">
-      <% if @current_user.present? %>
-      <%= link_to "Sign Out #{ @current_user.name}", login_path, :method => "delete", :class => "btn btn-outline-secondary mr-2" %>
-      <% else%>
-      <%= link_to "Sign In", login_path, :class => "btn btn-outline-light mr-3" %>
-      <%= link_to "SignUp", new_user_path, :class => "btn btn-outline-light mr-2" %>
-      <% end %>
+        <% if @current_user.present? %>
+        <%= link_to "Sign Out #{ @current_user.name}", login_path, :method => "delete", :class => "btn btn-outline-secondary mr-2" %>
+        <% else%>
+        <%= link_to "Sign In", login_path, :class => "btn btn-outline-light mr-3" %>
+        <%= link_to "SignUp", new_user_path, :class => "btn btn-outline-light mr-2" %>
+        <% end %>
       </form>
     </div>
   </nav>
   <div class="test container-fluid justify-content-center">
 
-   
-      <%= yield %>
-  
+
+    <%= yield %>
+
   </div>
 </body>
 
