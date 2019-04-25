@@ -4,13 +4,13 @@
         <div class="form-group">
             <%= form_for @dog do |f| %>
             <%= f.label :name, :class => "mt-2" %>
-            <%= f.text_field :name, :autofocus => true, :class => "form-control"  %>
+            <%= f.text_field :name, :autofocus => true, :class => "form-control", :required => true  %>
             <%= f.label :breed, :class => "mt-2"%>
-            <%= f.text_field :breed, :class => "form-control" %>
+            <%= f.text_field :breed, :class => "form-control", :required => true %>
             <%= f.label :color, :class => "mt-2"%>
-            <%= f.text_field :color, :class => "form-control" %>
+            <%= f.text_field :color, :class => "form-control", :required => true %>
             <%= f.label :sex, :class => "mt-2"%>
-            <%= f.text_field :sex, :class => "form-control" %>
+            <%= f.text_field :sex, :class => "form-control", :required => true %>
             <%= f.label :flea, :class => "mt-2"%>
             <%= f.date_field :flea, :class => "form-control" %>
             <%= f.label :worm, :class => "mt-2"%>

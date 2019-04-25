@@ -4,9 +4,9 @@
     <%= f.label :name %>
     <%= f.text_field :name, :autofocus => true, :class => "form-control", :required => true  %>
     <%= f.label :phone%>
-    <%= f.text_field :phone, :class => "form-control"%>
+    <%= f.text_field :phone, :class => "form-control", :required => true %>
     <%= f.label :address%>
-    <%= f.text_field :address, :class => "form-control"%>
+    <%= f.text_field :address, :class => "form-control", :required => true %>
     <%= f.submit "Create New Vet", :class => "btn btn-outline-info mt-3" %>
 <% end %>
  </div>

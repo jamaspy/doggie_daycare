@@ -2,9 +2,9 @@
 <div class="form-group mt-3">
 <%= form_for @vaccination do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name, :autofocus => true, :class => "form-control"  %>
+    <%= f.text_field :name, :autofocus => true, :class => "form-control", :required => true   %>
     <%= f.label :price%>
-    <%= f.text_field :price, :class => "form-control"%>
+    <%= f.text_field :price, :class => "form-control", :required => true %>
     
     <%= f.submit "Create New Vaccination", :class => "btn btn-outline-info mt-3" %>
 <% end %>

@@ -2,11 +2,11 @@
     <div class="form-group mt-3">
         <%= form_for @owner do |f| %>
         <%= f.label :name %>
-        <%= f.text_field :name, :autofocus => true, :class => "form-control"  %>
+        <%= f.text_field :name, :autofocus => true, :class => "form-control", :required => true  %>
         <%= f.label :email%>
         <%= f.email_field :email, :class => "form-control"%>
         <%= f.label :mobile%>
-        <%= f.text_field :mobile , :class => "form-control"%>
+        <%= f.text_field :mobile , :class => "form-control", :required => true  %>
         <%= f.label :address%>
         <%= f.text_field :address , :class => "form-control"%>
         <%= f.submit "Create New Owner", :class => "btn btn-outline-info mt-3" %>
