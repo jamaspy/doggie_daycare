@@ -17,6 +17,18 @@
 * Services
 * Users
 
+### Screenshots
+#### Log In Screen (Navbar disabled with out login credentials)
+![Log In Page](https://github.com/jamaspy/doggie_daycare/blob/master/README_Screenshots/login_screen.png
+#### Display All Dogs On The System
+![All Dogs View](https://github.com/jamaspy/doggie_daycare/blob/master/README_Screenshots/all_dogs_screen.png)
+#### Edit Dog Screen
+![Edit Dog Screen] (https://github.com/jamaspy/doggie_daycare/blob/master/README_Screenshots/edit_dogs_screen.png)
+#### Add New Dog Screen (Collection drop-down for Vet & Owner, plus checkbox selection for vaccinations)
+![Create New Dog Screen] (https://github.com/jamaspy/doggie_daycare/blob/master/README_Screenshots/new_dog_screen.png
+#### Show Owner Screen (Displays thumbnails of dogs owned by that person) 
+![Show Owner Screen] https://github.com/jamaspy/doggie_daycare/blob/master/README_Screenshots/show_owner_screen.png
+
 ## Additions
 * Booking/Calendar System
 * Email Campaign/Marketing Emails Feature
