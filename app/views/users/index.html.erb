@@ -1,23 +1,19 @@
-
 <div class="container">
-
-<table class="table mt-5">
- <thead class="thead-dark">
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Admin Rights</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @users.each do |user| %>
-    <tr>
-      <td scope="row"><%= link_to user.name, user_path(user.id) %></td>
-      <td scope="row"><% if user.admin == true %><%= "Yes" %><% else%><%= "No" %><% end%></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to "Add New User", new_user_path, :class => "btn btn-outline-info" %>
-
+  <table class="table mt-5">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Admin Rights</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td scope="row"><%= link_to user.name, user_path(user.id) %></td>
+        <td scope="row"><% if user.admin == true %><%= "Yes" %><% else%><%= "No" %><% end%></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Add New User", new_user_path, :class => "btn btn-outline-info" %>
 </div>

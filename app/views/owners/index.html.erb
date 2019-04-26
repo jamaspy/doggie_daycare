@@ -1,20 +1,20 @@
 <div class="container">
-<table class="table mt-5 text-center">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Number Of Dogs</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @owners.each do |owner| %>
-    <tr>
-      <th scope="row"><%= link_to owner.name, owner_path(owner.id) %></th>
-      <td><%= owner.dogs.count %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  <table class="table mt-5 text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Number Of Dogs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @owners.each do |owner| %>
+      <tr>
+        <th scope="row"><%= link_to owner.name, owner_path(owner.id) %></th>
+        <td><%= owner.dogs.count %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to "Add New Owner", new_owner_path, :class => "btn btn-outline-info" %>
+  <%= link_to "Add New Owner", new_owner_path, :class => "btn btn-outline-info" %>
 </div>

@@ -1,27 +1,21 @@
-
 <script>
-document.getElementById("transparent-nav").className = "navbar navbar-expand-lg navbar-dark bg-transparent";
-document.body.style.backgroundImage = "url(/assets/index-bg2.jpg)";
-document.body.style.backgroundPosition = "bottom";
-document.body.style.backgroundSize = "cover";
-document.body.style.backgroundRepeat = "no-repeat";
+    document.getElementById("transparent-nav").className = "navbar navbar-expand-lg navbar-dark bg-transparent";
+    document.body.style.backgroundImage = "url(/assets/index-bg2.jpg)";
+    document.body.style.backgroundPosition = "bottom";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundRepeat = "no-repeat";
 </script>
 <div class="row sign-in-page align-items-center justify-content-center">
-<div class="col-md-6">
-
-<h1 class = "mt-3">Please Sign-In</h1>
-
-<%= flash[:error] %>
-
-<%= form_tag login_path do %>
-<%= label_tag :email %>
-<%= email_field_tag :email, nil, class:'form-control' %>
-<br>
-<%= label_tag :password%>
-<%= password_field_tag :password, nil, class:'form-control'%>
-
-<%= submit_tag "Sign In", class: 'btn btn-outline-light mt-3' %>
-
-<% end%>
-</div>
+    <div class="col-md-6">
+        <h1 class="mt-3">Please Sign-In</h1>
+        <%= flash[:error] %>
+        <%= form_tag login_path do %>
+        <%= label_tag :email %>
+        <%= email_field_tag :email, nil, class:'form-control' %>
+        <br>
+        <%= label_tag :password%>
+        <%= password_field_tag :password, nil, class:'form-control'%>
+        <%= submit_tag "Sign In", class: 'btn btn-outline-light mt-3' %>
+        <% end%>
+    </div>
 </div>
