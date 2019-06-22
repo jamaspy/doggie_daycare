@@ -1,6 +1,8 @@
 # General Assembly Project One
 
 ## Doggie Daycare Database built using Ruby on Rails.
+## Live Version: https://doggiedaycareproject.herokuapp.com/
+
 ### A CRUD system with 6 models to track dogs, owners, services, vets, vaccinations and users. The system operates from the point of view of a Daycare Employee. 
 
 ### Details
